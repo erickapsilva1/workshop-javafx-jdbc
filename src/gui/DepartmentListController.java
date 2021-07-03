@@ -83,7 +83,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 		if(service == null) {
 			throw new IllegalStateException("Service was null");
 		}
-		List<Department> list = service.findAdd();
+		List<Department> list = service.findAll();
 		obsList = FXCollections.observableArrayList(list);
 		tableViewDepartment.setItems(obsList);
 		initEditButtons();
@@ -110,6 +110,7 @@ public class DepartmentListController implements Initializable, DataChangeListen
 			dialogStage.showAndWait();
 			
 		}catch(IOException e) {
+			e.printStackTrace();
 			Alerts.showAlert("IOException", "Error Loading View", e.getMessage(), AlertType.ERROR);
 		}
 	}
