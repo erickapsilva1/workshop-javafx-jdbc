@@ -73,7 +73,7 @@ public class SellerListController implements Initializable, DataChangeListener{
 	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
 		Seller obj = new Seller();
-		createDialogForm(obj, "../gui/SellerForm.fxml", parentStage);
+		createDialogForm(obj, "/gui/SellerForm.fxml", parentStage);
 	}
 	
 	@Override
@@ -152,7 +152,7 @@ public class SellerListController implements Initializable, DataChangeListener{
 				}
 				
 				setGraphic(button);
-				button.setOnAction(event -> createDialogForm(department, "../gui/SellerForm.fxml", Utils.currentStage(event)));
+				button.setOnAction(event -> createDialogForm(department, "/gui/SellerForm.fxml", Utils.currentStage(event)));
 			}
 		});
 	}
